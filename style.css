@@ -13,21 +13,30 @@ nav{position:fixed;top:0;width:100%;display:flex;justify-content:space-between;a
 .links a{color:var(--muted);text-decoration:none;margin-left:28px;transition:.3s}
 .links a:hover{color:#fff}
 section,header{position:relative;z-index:1}
-.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:0 8%}
+.hero{min-height:100vh;display:flex;flex-direction:row;align-items:center;justify-content:space-between;gap:50px;padding:100px 8% 60px}
+.hero-text{flex:1;min-width:0}
 .hello{color:var(--muted);font-size:1.2rem}
-.grad{font-size:clamp(3rem,10vw,8rem);line-height:1.05;background:linear-gradient(90deg,var(--p),var(--c),var(--p));background-size:200%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 5s linear infinite}
+.grad{font-size:clamp(2.8rem,8vw,7rem);line-height:1.05;background:linear-gradient(90deg,var(--p),var(--c),var(--p));background-size:200%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 5s linear infinite}
 @keyframes shine{to{background-position:200%}}
 .hero h2{font-size:clamp(1.3rem,3vw,2.2rem);margin:10px 0;font-weight:500}
 .cursor{animation:blink 1s infinite;color:var(--c)}
 @keyframes blink{50%{opacity:0}}
 .sub{color:var(--muted);max-width:520px;margin:12px 0 30px}
-.btn{display:inline-block;padding:14px 30px;border-radius:50px;text-decoration:none;font-weight:500;margin-right:12px;transition:.3s}
+.photo-wrap{position:relative;width:min(380px,80vw);aspect-ratio:1;flex-shrink:0}
+.ring{position:absolute;inset:-6px;border-radius:50%;background:conic-gradient(from 0deg,var(--p),var(--c),var(--p));animation:spin 6s linear infinite}
+.ring-glow{position:absolute;inset:-6px;border-radius:50%;background:conic-gradient(from 0deg,var(--p),var(--c),var(--p));filter:blur(35px);opacity:.55;animation:spin 6s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.photo-inner{position:absolute;inset:0;border-radius:50%;overflow:hidden;background:#0d0d18;border:5px solid var(--bg);display:flex;align-items:center;justify-content:center}
+.photo-inner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.photo-wrap:hover .photo-inner img{transform:scale(1.06)}
+.initial{font-size:9rem;font-weight:700;background:linear-gradient(135deg,var(--p),var(--c));-webkit-background-clip:text;background-clip:text;color:transparent}
+.btn{display:inline-block;padding:14px 30px;border-radius:50px;text-decoration:none;font-weight:500;margin:0 12px 12px 0;transition:.3s}
 .primary{background:linear-gradient(135deg,var(--p),var(--c));color:#fff;box-shadow:0 0 30px rgba(139,92,246,.4)}
 .primary:hover{transform:translateY(-3px);box-shadow:0 0 45px rgba(34,211,238,.5)}
 .ghost{border:1px solid rgba(255,255,255,.2);color:#fff}
 .ghost:hover{background:rgba(255,255,255,.08)}
-.scroll{position:absolute;bottom:30px;left:50%;font-size:1.6rem;color:var(--muted);animation:bounce 2s infinite}
-@keyframes bounce{50%{transform:translateY(10px)}}
+.scroll{position:absolute;bottom:30px;left:50%;width:14px;height:14px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:rotate(45deg);animation:bounce 2s infinite}
+@keyframes bounce{50%{transform:translateY(10px) rotate(45deg)}}
 section{padding:100px 8%}
 .title{font-size:2.4rem;margin-bottom:40px}
 .title::after{content:"";display:block;width:60px;height:4px;margin-top:10px;border-radius:4px;background:linear-gradient(90deg,var(--p),var(--c))}
@@ -44,7 +53,8 @@ section{padding:100px 8%}
 .tag{display:inline-block;margin-top:16px;padding:4px 14px;border-radius:20px;font-size:.8rem;background:rgba(34,211,238,.12);color:var(--c)}
 .contact{text-align:center;padding:60px 30px}
 .contact p{font-size:1.4rem;margin-bottom:24px}
+.contact-btns{display:flex;flex-wrap:wrap;justify-content:center}
 footer{text-align:center;padding:30px;color:var(--muted);position:relative;z-index:1}
 .reveal{opacity:0;transform:translateY(50px);transition:1s}
 .reveal.show{opacity:1;transform:none}
-@media(max-width:700px){.links{display:none}}
+@media(max-width:800px){.links{display:none}.hero{flex-direction:column-reverse;justify-content:center;text-align:center;gap:40px}.sub{margin-left:auto;margin-right:auto}.photo-wrap{width:min(260px,70vw)}.initial{font-size:6rem}}
