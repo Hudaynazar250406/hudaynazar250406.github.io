@@ -1,71 +1,100 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang='ru' data-theme='dark'>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Худайназар — Developer & Security</title>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<title>Худайназар Мерданов — Security & Network Engineer</title>
+<meta name='description' content='Портфолио: информационная безопасность, сети, Linux, VPN, pentest'>
+<meta property='og:type' content='website'>
+<meta property='og:title' content='Худайназар Мерданов — Security & Network Engineer'>
+<meta property='og:description' content='Портфолио: информационная безопасность, сети, Linux, VPN, pentest'>
+<meta property='og:image' content='https://hudaynazar250406.github.io/photo.jpg'>
+<meta property='og:url' content='https://hudaynazar250406.github.io/'>
+<meta name='twitter:card' content='summary_large_image'>
+<meta name='theme-color' content='#07070d'>
+<link rel='icon' href='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%2716%27 fill=%27%237c3aed%27/%3E%3Ctext x=%2732%27 y=%2745%27 font-size=%2740%27 font-family=%27Arial%27 font-weight=%27700%27 text-anchor=%27middle%27 fill=%27white%27%3EH%3C/text%3E%3C/svg%3E'>
+<link href='https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap' rel='stylesheet'>
+<link rel='stylesheet' href='style.css'>
 </head>
 <body>
-<div class="glow" id="glow"></div>
-<div class="bg-blob b1"></div><div class="bg-blob b2"></div>
-<nav><a href="#home" class="logo">H<span>.</span></a>
-<div class="links"><a href="#about">Обо мне</a><a href="#skills">Навыки</a><a href="#projects">Проекты</a><a href="#contact">Контакты</a></div></nav>
-<header id="home" class="hero">
-<div class="hero-text">
-<p class="hello">Привет, я</p>
-<h1 class="grad">Худайназар</h1>
-<h2><span id="typing"></span><span class="cursor">|</span></h2>
-<p class="sub">Студент IT. Делаю веб-приложения, настраиваю сети и изучаю безопасность.</p>
-<div class="btns"><a href="#projects" class="btn primary">Мои проекты</a><a href="#contact" class="btn ghost">Связаться</a></div>
+<noscript><style>#loader{display:none}.hero-text>*,.photo-wrap{opacity:1!important}</style></noscript>
+<div id='loader'><div class='l-logo'>H.</div><div id='l-bar'><i></i></div><div id='l-num'>0</div></div>
+<canvas id='bg'></canvas>
+<div id='cur'></div><div id='cur-ring'></div>
+<div class='glow' id='glow'></div>
+<div class='bg-blob b1'></div><div class='bg-blob b2'></div>
+<nav>
+<a href='#home' class='logo'>H<span>.</span></a>
+<div class='nav-r'>
+<div class='links'><a href='#about' data-i='n_about'></a><a href='#skills' data-i='n_skills'></a><a href='#projects' data-i='n_projects'></a><a href='#path' data-i='n_path'></a><a href='#contact' data-i='n_contact'></a></div>
+<div class='ctl'><button id='lang'>EN</button><button id='theme'></button></div>
 </div>
-<div class="photo-wrap">
-<div class="ring-glow"></div>
-<div class="ring"></div>
-<div class="photo-inner">
-<span class="initial">H</span>
-<img src="photo.jpg" alt="Худайназар" onerror="this.style.display='none'">
+</nav>
+<header id='home' class='hero'>
+<div class='hero-text'>
+<p class='hello' data-i='hello'></p>
+<h1 class='grad' data-i='name'></h1>
+<h2><span id='typing'></span><span class='cursor'>|</span></h2>
+<p class='sub' data-i='sub'></p>
+<div class='btns'><a href='#projects' class='btn primary' data-i='b_proj'></a><a href='#contact' class='btn ghost' data-i='b_contact'></a></div>
+</div>
+<div class='photo-wrap'>
+<div class='ring-glow'></div>
+<div class='ring'></div>
+<div class='photo-inner'>
+<span class='initial'>H</span>
+<img src='photo.jpg' alt='Худайназар Мерданов' onerror='this.style.display=&quot;none&quot;'>
 </div>
 </div>
-<div class="scroll"></div>
+<div class='scroll'></div>
 </header>
-<section id="about" class="reveal">
-<h3 class="title">Обо мне</h3>
-<div class="glass about">
-<p>Учусь в университете по направлению IT и ИБ. Люблю практику: поднимаю серверы на Linux, настраиваю Nginx, OpenVPN и firewall, строю сети с VLAN и OSPF, пишу на Python и Flask, изучаю криптографию (RSA, ECC, ГОСТ).</p>
-<div class="stats"><div><b data-count="10">0</b><span>проектов</span></div><div><b data-count="5">0</b><span>технологий</span></div><div><b data-count="100">0</b><span>% мотивации</span></div></div>
+<section id='about' class='reveal'>
+<h3 class='title' data-i='t_about'></h3>
+<div class='glass about'>
+<p data-i='about'></p>
+<div class='term'>
+<div class='term-bar'><i></i><i></i><i></i><span>bash — hudaynazar@portfolio</span></div>
+<div class='term-body' id='term'></div>
 </div>
-</section>
-<section id="skills" class="reveal">
-<h3 class="title">Навыки</h3>
-<div class="grid">
-<div class="glass card tilt"><h4>Разработка</h4><p>Python, Flask, HTML/CSS/JS, Git</p></div>
-<div class="glass card tilt"><h4>Сети</h4><p>VLAN, OSPF, маршрутизация, симуляторы</p></div>
-<div class="glass card tilt"><h4>Безопасность</h4><p>Firewall, OpenVPN, Wireshark, криптография</p></div>
-<div class="glass card tilt"><h4>Linux</h4><p>Администрирование, Nginx, bash</p></div>
-</div>
-</section>
-<section id="projects" class="reveal">
-<h3 class="title">Проекты</h3>
-<div class="grid">
-<a class="glass card tilt" href="https://github.com/Hudaynazar250406" target="_blank"><h4>Flask Web App</h4><p>Веб-приложение на Python с клиент-серверной архитектурой.</p><span class="tag">Python</span></a>
-<a class="glass card tilt" href="https://github.com/Hudaynazar250406" target="_blank"><h4>Network Lab</h4><p>Топология с VLAN, trunk и динамической маршрутизацией.</p><span class="tag">Networking</span></a>
-<a class="glass card tilt" href="https://github.com/Hudaynazar250406" target="_blank"><h4>Crypto Tools</h4><p>Реализация RSA, ECC и классических шифров.</p><span class="tag">Crypto</span></a>
-</div>
-</section>
-<section id="contact" class="reveal">
-<h3 class="title">Контакты</h3>
-<div class="glass contact">
-<p>Давай сделаем что-нибудь крутое вместе.</p>
-<div class="contact-btns">
-<a class="btn primary" href="https://t.me/Hnazarchik" target="_blank" rel="noopener">Telegram @Hnazarchik</a>
-<a class="btn ghost" href="mailto:merdanowhudaynazar7@mail.ru">merdanowhudaynazar7@mail.ru</a>
-<a class="btn ghost" href="https://github.com/Hudaynazar250406" target="_blank" rel="noopener">GitHub</a>
+<div class='stats'>
+<div><b id='st1' data-count='0'>0</b><span data-i='st1'></span></div>
+<div><b data-count='6'>0</b><span data-i='st2'></span></div>
+<div><b data-count='2'>0</b><span data-i='st3'></span></div>
 </div>
 </div>
 </section>
-<footer>© 2026 Худайназар</footer>
-<script src="script.js"></script>
+<section id='skills' class='reveal'>
+<h3 class='title' data-i='t_skills'></h3>
+<div class='glass'><div class='bars' id='bars'></div></div>
+</section>
+<section id='projects' class='reveal'>
+<h3 class='title' data-i='t_projects'></h3>
+<div class='grid' id='featured'></div>
+<h3 class='title sub-title' data-i='t_repos'></h3>
+<div class='grid' id='repos'><p class='muted' data-i='repos_load'></p></div>
+</section>
+<section id='path' class='reveal'>
+<h3 class='title' data-i='t_path'></h3>
+<div class='tl' id='tl'></div>
+</section>
+<section id='contact' class='reveal'>
+<h3 class='title' data-i='t_contact'></h3>
+<div class='glass contact'>
+<p data-i='c_text'></p>
+<div class='contact-btns'>
+<a class='btn primary' href='https://t.me/Hnazarchik' target='_blank' rel='noopener'>Telegram @Hnazarchik</a>
+<a class='btn ghost' href='mailto:merdanowhudaynazar7@mail.ru'>merdanowhudaynazar7@mail.ru</a>
+<a class='btn ghost' href='https://github.com/Hudaynazar250406' target='_blank' rel='noopener'>GitHub</a>
+<a class='btn ghost' href='resume.pdf' download data-i='b_resume'></a>
+</div>
+<form id='form' class='form'>
+<input id='f-name' type='text' required data-p='f_name'>
+<textarea id='f-msg' rows='4' required data-p='f_msg'></textarea>
+<button type='submit' class='btn primary' data-i='f_send'></button>
+</form>
+</div>
+</section>
+<footer>© 2026 Худайназар Мерданов</footer>
+<script src='script.js'></script>
 </body>
 </html>
